@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<!-- All the object.<something> were made to replace post.<something>...This was done to follow django code conventions which allow to reduce other code which I had to write, which otherwise, I would HAVE TO write -->
+	<article class="media content-section">
+	  <img class ="rounded-circle article-img" src="{{object.author.profile.image.url}}">
+	  <div class="media-body">
+	    <div class="article-metadata">
+	      <a class="mr-2" href="#">{{ object.author }}</a>
+	      <small class="text-muted">{{ object.date_posted|date:"d F, Y" }}</small>
+	    </div>
+	    <h2 class="article-title">{{ object.title }}</h2>
+	    <p class="article-content">{{ object.content }}</p>
+	  </div>
+	</article>
+	
+{% endblock content %}
